@@ -103,6 +103,8 @@ module.exports = function(Calendar) {
         Calendar.findOne({where: {name: eventName}},function (err,tmp) {
             cb(null,moment.preciseDiff(now,tmp.date));
         })
+
+
     };
 
     Calendar.setup = function() {

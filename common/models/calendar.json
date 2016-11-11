@@ -25,6 +25,7 @@
     "date":{
       "type": "date",
       "required": "true"
+    }
   },
   "validations": [],
   "relations": {},
