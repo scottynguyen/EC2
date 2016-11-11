@@ -99,7 +99,10 @@ module.exports = function(Calendar) {
         // implement a search ("findOne") operation where the name matches the "eventName"
         // and the response should be human readable (for example with momemt and the plugin preciseDiff)
         // keep in mind that the string could also not be found in the DB
-        cb(null, "NOT YET IMPLEMENTED");
+        var now = moment();
+        Calendar.findOne({where: {name: eventName}},function (err,tmp) {
+            cb(null,moment.preciseDiff(now,tmp.date));
+        })
     };
 
     Calendar.setup = function() {
